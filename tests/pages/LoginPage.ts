@@ -23,4 +23,10 @@ export default class LoginPage extends BasePage {
     await expect(this.login_button).toBeEnabled()
     await this.login_button.click()
   }
+
+  async login(email: string, password: string) {
+    await this.login_email.fill(email)
+    await this.login_password.fill(password)
+    await this.login_button.click()
+  }
 }
